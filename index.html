@@ -14,17 +14,10 @@
         </div>
 
         <div class="calc-row">
-          <input type="button" value="1" onclick="calculator.answer.value += '1'"/>
-          <input type="button" value="2" onclick="calculator.answer.value += '2'"/>
-          <input type="button" value="3" onclick="calculator.answer.value += '3'"/>
-          <input type="button" value="+" onclick="calculator.answer.value += '+'"/>
-        </div>
-
-        <div class="calc-row">
-          <input type="button" value="4" onclick="calculator.answer.value += '4'"/>
-          <input type="button" value="5" onclick="calculator.answer.value += '5'"/>
-          <input type="button" value="6" onclick="calculator.answer.value += '6'"/>
-          <input type="button" value="-" onclick="calculator.answer.value += '-'"/>
+          <input type="button" value="AC" onclick="calculator.answer.value = ''"/>
+          <input type="button" value="+/-" onclick="calculator.answer.value *= '-1'"/>
+          <input type="button" value="%" onclick="calculator.answer.value += '%'"/>
+          <input type="button" value="/" onclick="calculator.answer.value += '/'"/>
         </div>
 
         <div class="calc-row">
@@ -35,10 +28,25 @@
         </div>
 
         <div class="calc-row">
+          <input type="button" value="4" onclick="calculator.answer.value += '4'"/>
+          <input type="button" value="5" onclick="calculator.answer.value += '5'"/>
+          <input type="button" value="6" onclick="calculator.answer.value += '6'"/>
+          <input type="button" value="-" onclick="calculator.answer.value += '-'"/>
+        </div>
+
+        <div class="calc-row">
+          <input type="button" value="1" onclick="calculator.answer.value += '1'"/>
+          <input type="button" value="2" onclick="calculator.answer.value += '2'"/>
+          <input type="button" value="3" onclick="calculator.answer.value += '3'"/>
+          <input type="button" value="+" onclick="calculator.answer.value += '+'"/>
+        </div>
+
+
+        <div class="calc-row">
           <input type="button" value="c" onclick="calculator.answer.value = ''"/>
           <input type="button" value="0" onclick="calculator.answer.value += '0'"/>
+          <input type="button" value="." onclick="calculator.answer.value += '.'"/>
           <input type="button" value="=" onclick="calculator.answer.value = eval(calculator.answer.value)"/>
-          <input type="button" value="/" onclick="calculator.answer.value += '/'"/>
         </div>
 
       </form>
