@@ -4,49 +4,57 @@
     <meta charset="utf-8">
 
     <title>JS Calculator</title>
+
+    <!-- jQuery -->
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/script.js"></script>
   </head>
 
   <body>
     <div id="calc-container">
       <form name="calculator">
-        <div class="calc-answer-window">
-          <input type="text" name="answer"/>
+        <div id="calc-output">
+          <span id="answer-display">0</span>
         </div>
 
         <div class="calc-row">
-          <input type="button" value="AC" onclick="calculator.answer.value = ''"/>
-          <input type="button" value="+/-" onclick="calculator.answer.value *= '-1'"/>
-          <input type="button" value="%" onclick="calculator.answer.value += '%'"/>
-          <input type="button" value="/" onclick="calculator.answer.value += '/'"/>
+          <button id="delete-all">AC</button>
+          <button id="+/-">+/-</button>
+          <button id="%">%</button>
+          <button id="/">/</button>
         </div>
 
         <div class="calc-row">
-          <input type="button" value="7" onclick="calculator.answer.value += '7'"/>
-          <input type="button" value="8" onclick="calculator.answer.value += '8'"/>
-          <input type="button" value="9" onclick="calculator.answer.value += '9'"/>
-          <input type="button" value="x" onclick="calculator.answer.value += '*'"/>
+          <button id="7">7</button>
+          <button id="8">8</button>
+          <button id="9">9</button>
+          <button id="*">x</button>
         </div>
 
         <div class="calc-row">
-          <input type="button" value="4" onclick="calculator.answer.value += '4'"/>
-          <input type="button" value="5" onclick="calculator.answer.value += '5'"/>
-          <input type="button" value="6" onclick="calculator.answer.value += '6'"/>
-          <input type="button" value="-" onclick="calculator.answer.value += '-'"/>
+          <button id="4">4</button>
+          <button id="5">5</button>
+          <button id="6">6</button>
+          <button id="-">-</button>
         </div>
 
         <div class="calc-row">
-          <input type="button" value="1" onclick="calculator.answer.value += '1'"/>
-          <input type="button" value="2" onclick="calculator.answer.value += '2'"/>
-          <input type="button" value="3" onclick="calculator.answer.value += '3'"/>
-          <input type="button" value="+" onclick="calculator.answer.value += '+'"/>
+          <button id="1">1</button>
+          <button id="2">2</button>
+          <button id="3">3</button>
+          <button id="+">+</button>
         </div>
 
 
         <div class="calc-row">
-          <input type="button" value="c" onclick="calculator.answer.value = ''"/>
-          <input type="button" value="0" onclick="calculator.answer.value += '0'"/>
-          <input type="button" value="." onclick="calculator.answer.value += '.'"/>
-          <input type="button" value="=" onclick="calculator.answer.value = eval(calculator.answer.value)"/>
+          <button id="back-one">CE</button>
+          <button id="0">0</button>
+          <button id=".">.</button>
+          <button id="total">=</button>
         </div>
 
       </form>
