@@ -46,32 +46,33 @@ $(document).ready( function () {
   function getTotal() {
     totalString = inputs.join("");
     $("#answer-display").html(eval(totalString));
+    console.log(eval(totalString));
   }
 
   $("button").on("click", function (e) {
     var item = e.target.id;
-    switch (e) {
-        case (item === "delete-all"):
+    switch (item) {
+        case "delete-all":
           inputs = [""];
           update();
           break;
 
-        case (item === "back-one"):
+        case "back-one":
           inputs.pop();
           update();
           break;
 
-        case (item === "+/-"):
+        case "+/-":
           inputs.push("*-1");
           update();
           break;
 
-        case (item === "%"):
+        case "%":
           inputs.push("%");
           update();
           break;
 
-        case (item === "total"):
+        case "total":
           getTotal();
           break;
 
