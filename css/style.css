@@ -10,30 +10,37 @@ html {
 }
 
 #calculator {
-  background-color: orange;
+  background-color: #cf5400;
   border-radius: 15px;
+  border: 2px solid black;
   padding: 1em;
   max-width: 280px;
   box-shadow: 7px 7px 5px #1b181a;
 }
 
 #calc-output {
+  display: flex;
+  align-content: center;
   background-color: white;
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 7px;
   height: 3rem;
   margin: 0 0 0.2em 0;
   font-size: 2rem;
-  padding: 0.2rem;
+  padding: 0.5rem;
 }
 
 .calc-row {
-  padding: 0.4rem 0;
+  padding: 0.2rem 0;
 }
 
 .calc-row button {
-  background-color: white;
-  border: 1px solid black;
+  font-family: 'Josefin Sans', sans-serif;
+  color: white;
+  -webkit-text-stroke: 2px black;
+  font-size: 1.5rem;
+  background-color: #ffaa21;
+  border: 2px solid black;
   border-radius: 10px;
   width: 50px;
   height: 50px;
@@ -41,5 +48,6 @@ html {
 }
 
 button:hover {
+  background-color: #9f6a14;
   box-shadow: 0px 0px 5px #1b181a;
 }
