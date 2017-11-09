@@ -6,36 +6,44 @@ $(document).ready(function () {
 
   // Operators for validation without decimal
   const operators1 = ["+", "-", "/", "*"];
+  const operators = ["+", "-", "/", "*"];
   // Operators for validation only decimal
   const operators2 = ["."];
+  const decimal = ".";
 
   // Numbers for validation
   const num = [0,1,2,3,4,5,6,7,8,9];
 
   function getValue(input) {
-    if(operators2.includes(inputs[inputs.length-1]) && input === ".") {
-      // if two decimal places are added side by side such that you would
-      // get "..", prints an error message to the console and doesn't
-      // alter the inputs array.
-      console.log(`A. Duplicat .`);
-    }
-    else if (inputs.length >= 1 && operators1.includes(input) || operators2.includes(input)) {
-      console.log(`B. ${input} is an operator`);
-      // checks if input is an operator
-      // order to avoid duplicate operators
+    let lastItem = inputs[inputs.length-1];
+    // most specific to least specific
+    /*
+    CASE 1
+    operators and decimals can only come before and after Numbers
+    2.2
+    2+2
+    2.2+2.2
+    2.34*3.4+4.44
+
+    CASE 2
+    decimals points can come before or after points
+    .22+.33
+    3.+4.
+    4.4+3.3
+    decimals cannot be followed by other decimals
+    */
+
+    // DECIMAL
+    if (input === decimal && lastItem !== decimal) {
+      console.log("decimal");
       inputs.push(input);
-    }
-    else if (operators1.includes([inputs.length-1])) {
-      // checks to make sure that the last entry
-      // in the inputs array is not an operator;
-      console.log(`C. `);
+    // OPERATOR
+    } else if (operators.includes(input) && !operators.includes(lastItem)) {
+      console.log("operator");
       inputs.push(input);
-    }
-    else if (num.includes(Number(input))) {
-      console.log(`D. ${input} is a number and is in the num array`)
-      // if the input provided can be found in the num array
-      // pushes the number into the input array.
-      // i.e. if the input is a number.
+    // NUMBER
+    } else if (num.includes(Number(input))) {
+      console.log("number");
       inputs.push(input);
     }
     update();
