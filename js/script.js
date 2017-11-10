@@ -5,10 +5,7 @@ $(document).ready(function () {
   let totalString;
 
   // Operators for validation without decimal
-  const operators1 = ["+", "-", "/", "*"];
   const operators = ["+", "-", "/", "*"];
-  // Operators for validation only decimal
-  const operators2 = ["."];
   const decimal = ".";
 
   // Numbers for validation
@@ -16,9 +13,11 @@ $(document).ready(function () {
 
   function getValue(input) {
     let lastItem = inputs[inputs.length-1];
-    // most specific to least specific
     /*
+    most specific to least specific case
+
     CASE 1
+    ----------------------------------------------------
     operators and decimals can only come before and after Numbers
     2.2
     2+2
@@ -26,6 +25,7 @@ $(document).ready(function () {
     2.34*3.4+4.44
 
     CASE 2
+    ----------------------------------------------------
     decimals points can come before or after points
     .22+.33
     3.+4.
@@ -62,6 +62,7 @@ $(document).ready(function () {
     console.log("Total = " + eval(totalString));
   }
 
+  // CALCULATOR BUTTONS EVENT HANDLER
   $("button").on("click", function (e) {
     var item = e.target.id;
     console.log(item);
